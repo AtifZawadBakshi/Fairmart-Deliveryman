@@ -1,5 +1,5 @@
 
-import {React,useState} from 'react'
+import {React,useState,useEffect} from 'react'
 import { BrowserRouter, Route, Switch} from 'react-router-dom';
 import About from './components/About';
 import Contact from './components/Contact';
@@ -7,6 +7,9 @@ import Post from './components/Post';
 import Home from './components/Home';
 import Navbar from './components/Navbar';
 import LoginForm from './components/LoginForm';
+import ApplicantList from './components/ApplicantList';
+import ProductList from './components/ProductList';
+import axios from 'axios'
 
 function App() {
   const adminUser = {
@@ -36,6 +39,8 @@ const Logout = () => {
     setUser({ name : '', email: '' });
 }
 
+
+
   return (  
 
     // <>
@@ -57,14 +62,16 @@ const Logout = () => {
                               <Route path = '/about' component={About}/>
                               <Route path = '/contact' component={Contact}/>
                               <Route path = '/post' component={Post}/>
+                              <Route path = '/applicantlist' component={ApplicantList}/>
+                              <Route path = '/productlist' component={ProductList}/>
                             </Switch> 
                             <button className='btn' onClick={Logout}>Logout</button>
                     </div>
                     
-                ):(
-                    <LoginForm Login={Login} error={error}/>
-                ) 
-            }    
+            ):(
+            <LoginForm Login={Login} error={error}/>
+            )
+          }
       
       </div>
     </BrowserRouter>

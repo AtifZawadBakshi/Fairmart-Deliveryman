@@ -19,7 +19,12 @@ function Navbar() {
                     <Link to='/post'>
                         <li>Post</li>
                     </Link>
-                   
+                    <Link to='/applicantlist'>
+                        <li>Applicants</li>
+                    </Link>
+                    <Link to='/productlist'>
+                        <li>Products</li>
+                    </Link>
                 </ul>
             </nav>
         </div>
